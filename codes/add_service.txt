@@ -1,0 +1,119 @@
+<%-- 
+    Document   : add_service
+    Created on : May 13, 2023, 1:20:33 AM
+    Author     : Admin
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <title>Add service</title>
+           <link rel="stylesheet" href="bootstrap.min.css">
+             <script src="validation.js"></script>
+          <style>
+            .container{
+                margin-bottom: 20px;
+               
+            }
+            .body{
+                background: linear-gradient(to top left, #33ccff 0%, #ff99cc 100%);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+            .form{
+                border-radius: 20px;
+                padding: 20px;
+                background-color: white;
+                margin-top: 50px;
+            }
+            
+        </style>
+    </head>
+    <body class="body">
+       <div class="container">
+        <div class="row">
+            <div class="col-sm-2">
+                </div>
+                <div class="col-sm-8">
+                    
+                    <form class="form"> 
+                         <h5 align="right" style="color:black;">X</h5>
+            <h5 align="center">Add Services</h5>
+            
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+            <label>Provider Name</label>
+        
+        <input type="text" name="vendor_nm" placeholder="enter vendorname" class="form-control" onkeypress="Javascript:return isString(event)" required>
+           
+            <br>
+            <label> Description</label>
+            <br>
+            <textarea name="txt_area" placeholder="enter product details"  rows="2" class="form-control" ></textarea>
+            <br>
+            <label>Contact</label>
+        
+        <input type="text" name="contac_no" placeholder="enter contact no" class="form-control" required>
+        <br>
+         <label>Add price</label>
+            <input type="number" name="price" placeholder="enter price" class="form-control" required>
+        <br>
+        <br>
+        <input type="submit" value="cancle" class="btn btn-danger" style="float:right;">
+        </div>
+      
+        <div class="col-sm-6">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="enter email" class="form-control" >
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+              <label>Category name</label>
+                    <select name="" class="form-control">
+                        <option>Other services</option>
+                        <option>Decoration</option>
+                        <option>Photographer</option>
+                        <option>Dj system</option>
+                        <option>Singer/Musicians</option>
+                        <option>Catering</option>
+                        <option>Workers</option>
+                        
+                    </select>
+              <br>
+              
+                </div>
+                <div class="col-sm-6">
+        <label>Select Area</label>
+        <select class="form-control">
+            <option> select</option>
+               <option>Gadhinglaj</option>
+                  <option>Nesari</option>
+        </select>
+       
+                </div>
+            </div><br>
+             <label>Office Address</label>
+              <textarea type="" name="pswd" class="form-control" ></textarea>
+    <br>
+      <label>Add profile image</label>
+       <input type="file" name="email" placeholder="add" class="form-control" required>
+       <br>
+       <input type="submit" value="Add" class="btn btn-info" style="float:left;">
+        </div>      
+    
+     
+   </form> 
+    </div>                
+</div>          
+        <div class="col-sm-2">
+            </div>  
+        
+        </div>
+            </div>
+        
+    </body>
+</html>

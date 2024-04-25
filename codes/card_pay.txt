@@ -1,0 +1,83 @@
+<%-- 
+    Document   : card_pay
+    Created on : May 13, 2023, 12:38:49 AM
+    Author     : Admin
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Card Payment</title>
+        <link rel="stylesheet" href="bootstrap.min.css">
+              <script src="validation.js"></script>
+         <style>
+                .container{
+                background-color: white;
+                padding: 40px;
+                margin-top: 40px;
+                border-radius: 20px;
+                
+            }
+            .body{
+           
+                background: linear-gradient(to top left, #33ccff 0%, #ff99cc 100%);
+            }
+          
+         </style>
+    </head>
+    <body class="body">
+        <form >
+        <div class="row">
+            <div class="col-sm-4">
+                 </div>
+                <div class="col-sm-4 container">
+                    <h4 href="" style="color:black;" align="right" class="">X</h4>
+                    <h3 align="center">CARD PAYMENT</h3>
+                    
+              
+       
+    <label>CARD HOLDER NAME</label>
+    
+            <input type="text" name="c_name" placeholder="enter card holder name" class="form-control" onkeypress="Javascript:return isString(event)" required>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                   
+    <label>CARD NUMBER</label>
+    
+            <input type="number" name="c_no" placeholder="enter card number" class="form-control" >
+            
+                </div><br>
+                <div class="col-sm-6">
+                    <label>CVV</label>
+    
+            <input type="number" name="cvv" placeholder="cvv" class="form-control" >
+                </div>
+            </div> <br>
+             <label>Exp. Date</label>
+            <input type="date" name="exp_date" class="form-control" placeholder="enter Exp. date">
+            
+            <br>
+               
+            
+              <label>AMOUNT</label>
+    
+            <input type="number" name="amt" placeholder="amount" class="form-control" >
+            <br>
+        
+                            <input type="submit" name="btn" class="btn btn-primary form-control">
+                         
+                  </div>
+                 
+           
+            <div class="col-sm-4">
+                
+            </div> 
+              </div>
+            <BR>
+            </form>
+    </body>
+</html>
+

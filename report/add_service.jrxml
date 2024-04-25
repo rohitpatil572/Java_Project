@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="add_service" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4624aaa4-20de-4686-ae5e-574c72f6fa02">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="165"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     add_servises.`no` AS add_servises_no,
+     add_servises.`provider_name` AS add_servises_provider_name,
+     add_servises.`details` AS add_servises_details,
+     add_servises.`contact` AS add_servises_contact,
+     add_servises.`price` AS add_servises_price,
+     add_servises.`email` AS add_servises_email,
+     add_servises.`category` AS add_servises_category,
+     add_servises.`area` AS add_servises_area,
+     add_servises.`address` AS add_servises_address
+FROM
+     `add_servises` add_servises]]>
+	</queryString>
+	<field name="add_servises_no" class="java.lang.Integer"/>
+	<field name="add_servises_provider_name" class="java.lang.String"/>
+	<field name="add_servises_details" class="java.lang.String"/>
+	<field name="add_servises_contact" class="java.lang.String"/>
+	<field name="add_servises_price" class="java.lang.String"/>
+	<field name="add_servises_email" class="java.lang.String"/>
+	<field name="add_servises_category" class="java.lang.String"/>
+	<field name="add_servises_area" class="java.lang.String"/>
+	<field name="add_servises_address" class="java.lang.String"/>
+	<group name="add_servises_no">
+		<groupExpression><![CDATA[$F{add_servises_no}]]></groupExpression>
+		<groupHeader>
+			<band height="27">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="3" width="826" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="92f8bc3b-9e4a-4db8-b9ce-330d604b0724"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement style="SubTitle" x="2" y="0" width="695" height="24" forecolor="#FFFFFF" uuid="879d1c77-8884-4d6e-aff5-8ed38cf1d533"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{add_servises_no}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="826" height="66" backcolor="#000000" uuid="d6f2831a-ff29-4fb5-9259-e0466564ee70"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="18c6a292-d729-46b3-9a01-2e1c4aa4a1cb"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add Services]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="70" width="826" height="32" forecolor="#000000" backcolor="#CC0000" uuid="8abc114c-c63b-4d7d-8201-7a2f697eab34"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="670e787a-9dad-4b00-9259-2ad09e7ae9d7"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="118" height="18" forecolor="#000000" uuid="39bfd062-ea96-4a8c-999a-53f423925243"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[add_servises_provider_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="170" y="0" width="111" height="18" forecolor="#000000" uuid="e8f793ec-4d13-431c-b281-4d4aaf4f5737"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[add_servises_contact]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="297" y="0" width="86" height="18" forecolor="#000000" uuid="e671824d-1f77-49b9-a0d6-5fadbeabd0d0"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[add_servises_price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="396" y="0" width="81" height="18" forecolor="#000000" uuid="f34233c2-8531-405f-97e6-8ddf012a4386"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[add_servises_email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="495" y="0" width="86" height="18" forecolor="#000000" uuid="28f227a7-07eb-426b-a2f5-87def259c96e"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[add_servises_category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="594" y="0" width="83" height="18" forecolor="#000000" uuid="0194c30e-066e-4362-b2c5-fa1daa420a6c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[add_servises_area]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="693" y="0" width="86" height="18" forecolor="#000000" uuid="77dbe31e-9e6d-4f97-8d9f-1bf55c0a2451"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[add_servises_address]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="215b6b8c-bc20-4086-a647-ea175dd42368"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="118" height="18" uuid="9fd2262c-179c-4396-885b-d6dc3e5de9b3"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{add_servises_provider_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="170" y="0" width="111" height="18" uuid="3a4081a8-9a29-4db5-bed5-ba03b36ffcac"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{add_servises_contact}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="297" y="0" width="86" height="18" uuid="c2bb8674-466d-479c-8332-fe7f4f389e3f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{add_servises_price}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="396" y="0" width="81" height="18" uuid="0e02da16-64cf-4f0d-9651-1cf214768326"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{add_servises_email}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="495" y="0" width="86" height="18" uuid="78ffb973-7e0a-465a-8686-42bc19aa06a7"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{add_servises_category}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="594" y="0" width="83" height="18" uuid="b5318b58-2237-4e57-ab01-ea1a2b52dada"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{add_servises_area}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="693" y="0" width="86" height="18" uuid="c763d21b-90df-4694-bf04-a4bbca7235ed"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{add_servises_address}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="fdc54218-ed08-4dcf-8b9a-d7f68b819718"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="ac06dd34-cbc6-4f10-907d-dc657f55e5ab"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="eb432b4f-a2c7-4580-bbb5-2956abe0a822"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="f33703da-e10b-46c6-84d3-c76823e34451"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="927809da-8ce7-4afe-8941-221226f86195"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
