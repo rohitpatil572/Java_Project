@@ -1,0 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import com.sun.faces.context.RequestParameterMap;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ *
+ * @author Admin
+ */
+public class contact1 extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter out=resp.getWriter();
+        
+        String fname=req.getParameter("txt_fname");
+        String email=req.getParameter("txt_email");
+        String lname=req.getParameter("txt_lname");
+        String number=req.getParameter("txt_number");
+        String msg=req.getParameter("txt_msg");
+        String submit=req.getParameter("event");
+        
+
+        out.println(fname);
+        out.println(email);
+        out.println(lname);
+        out.println(number);
+        out.println(msg);
+          
+    Database db=new Database();
+       String result=db.connectdb();
+       out.println(result);
+        
+        if(submit.equals("submit"))
+       {
+           
+           String insert=db.Query("insert into contact_us(fname,email,lname,number,msg)values('"+fname+"','"+email+"','"+lname+"','"+number+"','"+msg+"')", "Record Inserted");
+           out.println(insert);
+       
+       }
+
+    }
+    
+
+   
+}
